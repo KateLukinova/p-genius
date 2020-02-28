@@ -1,0 +1,258 @@
+@font-face {
+    font-family: 'Gilroy';
+    src: local('Gilroy Light'),
+    local('Gilroy-Light'),
+    url('../fonts/Gilroylight.woff2') format('woff2'),
+    url('../fonts/Gilroylight.woff') format('woff'),
+    url('../fonts/Gilroylight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Gilroy-ExtraBold';
+    src: local('Gilroy ExtraBold'),
+    local('Gilroy-ExtraBold'),
+    url('../fonts/Gilroyextrabold.woff2') format('woff2'),
+    url('../fonts/Gilroyextrabold.woff') format('woff'),
+    url('../fonts/Gilroyextrabold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy-Bold';
+    src: url('../fonts/Gilroy-Bold.eot');
+    src: local('../fonts/Gilroy Bold'), local('Gilroy-Bold'),
+    url('../fonts/Gilroy-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Gilroy-Bold.woff2') format('woff2'),
+    url('../fonts/Gilroy-Bold.woff') format('woff'),
+    url('../fonts/Gilroy-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/*reset css*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+html, body {
+    width: 100vw;
+}
+body {
+    font-family: "Gilroy", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #111111;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+h1 {
+    font-family: 'Gilroy-Bold', sans-serif;
+    font-style: normal;
+    font-size: 50px;
+    line-height: 1.4;
+    color: #FFFFFF;
+}
+h2 {
+    font-family: 'Gilroy', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: right;
+    color: #FFFFFF;
+}
+header {
+    position: fixed;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    .header-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 140px;
+    }
+}
+section {
+    width: 100%;
+    height: auto;
+}
+.main-page {
+    background-color: #000000;
+    position: relative;
+    .radial {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0) 61.98%, #000000 100%);
+        z-index: 1;
+    }
+    .center-block {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+}
+.block-video  {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    img, video {
+        width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+    }
+}
+.container-fluid {
+    padding: 0;
+}
+nav {
+    .nav-link {
+        font-family: 'Gilroy', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 1.5;
+        letter-spacing: 0.1px;
+        color: #FFFFFF;
+        margin-left: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            margin-left: 11px;
+        }
+    }
+}
+.video-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 102px;
+    height: 102px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 4px 9px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 100%;
+    img {
+        width: 30px;
+        height: 30px;
+        max-height: 23px;
+        object-fit: contain;
+        margin-left: 5px;
+    }
+}
+.main-page__text-block {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    max-width: 350px;
+    h2 {
+        margin-bottom: 20px;
+    }
+}
+.button-primary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EA3410;
+    font-family: 'Gilroy', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1;
+    text-align: center;
+    letter-spacing: 0.75px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    width: 280px;
+    height: 56px;
+}
+.end-block {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+    &__item {
+        max-width: 280px;
+        width: 30%;
+    }
+    &__name {
+        font-family: 'Gilroy-Bold', sans-serif;
+        font-style: normal;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #FFFFFF;
+        margin: 5px 0;
+    }
+    &__description {
+        font-family: 'Gilroy', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 1.2;
+        color: #FFFFFF;
+        width: 90%;
+    }
+}
+/*@media (max-width: 1300px)*/
+
