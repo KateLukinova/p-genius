@@ -93,20 +93,30 @@ h3 {
   text-align: right;
   color: #FFFFFF; }
 
+.logo {
+  display: flex;
+  align-items: center; }
+
 header {
   position: fixed;
   background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10; }
+  z-index: 11;
+  transition: all 0.5s ease; }
+  header.active {
+    background-color: black; }
+    header.active .header-top {
+      height: 90px; }
 
 .header-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 140px; }
+  height: 140px;
+  transition: all 0.5s ease; }
 
 section {
   width: 100%;
@@ -221,7 +231,9 @@ nav .nav-link {
   margin-bottom: 50px; }
   .end-block__item {
     max-width: 280px;
-    width: 30%; }
+    width: 30%;
+    margin: 0 5px;
+    overflow: hidden; }
   .end-block__name {
     font-family: 'Gilroy-Bold', sans-serif;
     font-style: normal;
@@ -643,6 +655,47 @@ input {
 .white-padding {
   padding-bottom: 200px; }
 
+.modal.show .modal-dialog, .modal.fade .modal-dialog {
+  transform: translate(-50%, -50%); }
+
+.modal .best-deal-modal-dialog {
+  width: 90%;
+  max-width: 800px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); }
+  .modal .best-deal-modal-dialog .modal-header {
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Gilroy-Bold', sans-serif;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    color: #111111;
+    position: relative; }
+    .modal .best-deal-modal-dialog .modal-header .close {
+      position: absolute;
+      right: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 0;
+      margin: 0; }
+
+.modal-end-block {
+  position: static;
+  transform: none;
+  flex-wrap: wrap; }
+  .modal-end-block .end-block__item {
+    margin-bottom: 25px; }
+    .modal-end-block .end-block__item .end-block__name, .modal-end-block .end-block__item .end-block__description {
+      color: black; }
+
 footer {
   display: flex;
   justify-content: center;
@@ -847,7 +900,10 @@ footer {
         justify-content: center;
         margin: 20px 0; }
         .footer-body .left-column .footer-item a, .footer-body .right-column .footer-item a {
-          margin: 0 20px; } }
+          margin: 0 20px; }
+
+  .logo-text {
+    display: none; } }
 @media (max-width: 480px) {
   .white-block .best-deal-carousel,
   .ads-block .best-deal-carousel {

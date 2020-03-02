@@ -111,13 +111,24 @@ h3 {
     text-align: right;
     color: #FFFFFF;
 }
+.logo {
+    display: flex;
+    align-items: center;
+}
 header {
     position: fixed;
     background-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 10;
+    z-index: 11;
+    transition: all 0.5s ease;
+    &.active {
+        background-color: black;
+       .header-top {
+           height: 90px;
+       }
+    }
 }
 .header-top {
     display: flex;
@@ -125,6 +136,7 @@ header {
     align-items: center;
     width: 100%;
     height: 140px;
+    transition: all 0.5s ease;
 }
 section {
     width: 100%;
@@ -248,6 +260,8 @@ nav {
     &__item {
         max-width: 280px;
         width: 30%;
+        margin: 0 5px;
+        overflow: hidden;
     }
     &__name {
         font-family: 'Gilroy-Bold', sans-serif;
@@ -728,6 +742,54 @@ input {
 .white-padding {
     padding-bottom: 200px;
 }
+.modal.show .modal-dialog, .modal.fade .modal-dialog {
+    transform: translate(-50%, -50%);
+}
+.modal .best-deal-modal-dialog {
+    width: 90%;
+    max-width: 800px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    .modal-header {
+        width: 100%;
+        border: none;
+        border-radius: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Gilroy-Bold', sans-serif;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 30px;
+        text-align: center;
+        color: #111111;
+        position: relative;
+        .close {
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 0;
+            margin: 0;
+        }
+    }
+}
+
+.modal-end-block {
+    position: static;
+    transform: none;
+    flex-wrap: wrap;
+    .end-block__item {
+        margin-bottom: 25px;
+        .end-block__name, .end-block__description {
+            color: black;
+        }
+    }
+}
+
+
 footer {
     display: flex;
     justify-content: center;
@@ -999,6 +1061,9 @@ footer {
                 }
             }
         }
+    }
+    .logo-text {
+        display: none;
     }
 }
 @media (max-width: 480px) {

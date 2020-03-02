@@ -1,5 +1,13 @@
 $( document ).ready(function() {
 
+    $(window).scroll(function () {
+        if (this.pageYOffset > 0) {
+            $('header').addClass('active');
+        } else {
+            $('header').removeClass('active');
+        }
+    }).trigger('scroll');
+
     $('.best-deal-carousel').slick({
         loop: true,
         infinite: false,
