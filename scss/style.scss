@@ -492,6 +492,7 @@ strong {
     }
     .reviews-nav-box {
         width: 100%;
+        max-width: 850px;
         display: flex;
         justify-content: space-between;
         position: absolute;
@@ -624,6 +625,10 @@ strong {
 }
 .bg-black {
     background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 .feedback-block {
     background-color: white;
@@ -720,7 +725,7 @@ input {
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
 }
-.big-padding {
+.white-padding {
     padding-bottom: 200px;
 }
 footer {
@@ -728,12 +733,27 @@ footer {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    .footer-body {
+        display: flex;
+        justify-content: space-between;
+    }
+    .left-column,
+    .right-column {
+        width: 50%;
+        justify-content: flex-start;
+    }
+    .left-column .footer-item a {
+        margin-right: 30px;
+    }
+    .right-column .footer-item a {
+        margin-left: 30px;
+    }
     .footer-item {
         width: 100%;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
-        margin: 20px 0;
+        margin: 40px 0;
         a {
             font-family: 'Gilroy', sans-serif;
             font-style: normal;
@@ -742,15 +762,24 @@ footer {
             line-height: 17px;
             color: rgba(255, 255, 255, 0.6);
         }
-        .left-column a {
-            margin-right: 30px;
-        }
-        .right-column a {
-            margin-left: 30px;
-        }
+    }
+    .right-column .footer-item {
+        justify-content: flex-end;
     }
 }
 
+@media (max-width: 1201px) {
+    .ads-block {
+        padding-left: 0;
+    }
+    .progress-bar {
+        width: 100%;
+    }
+    .white-padding {
+        padding-top: 0;
+        padding-left: 0;
+    }
+}
 
 @media (max-width: 991px) {
     .container, .container-md, .container-sm {
@@ -760,7 +789,13 @@ footer {
         width: 100%;
         max-width: 100%;
     }
+    .white-block .best-deal-carousel,
+    .ads-block .best-deal-carousel {
+        width: 65%;
+        margin-left: 5%;
+    }
 }
+
 @media (max-width: 768px) {
     .center-block {
         flex-direction: column;
@@ -788,6 +823,35 @@ footer {
         .what-course__item {
             min-width: 210px;
         }
+    }
+    .keys-block {
+        .keys-block__item {
+            width: 70%;
+        }
+    }
+    .feedback-block {
+        width: 120%;
+        transform: translateX(-10%);
+        box-shadow: none;
+        min-width: 375px;
+        .text-black {
+            text-align: center;
+        }
+    }
+    .bg-black {
+        max-width: 100%;
+    }
+    .form-feedback {
+        .input-box {
+            flex-direction: column;
+            width: 100%;
+            input, button {
+                width: 100%;
+            }
+        }
+    }
+    .checkbox label {
+        align-items: flex-start;
     }
 }
 
@@ -821,13 +885,39 @@ footer {
             width: 100%;
             margin-bottom: 30px;
             h2 {
+                width: 87%;
+                text-align: center;
+                margin: auto;
+                margin-bottom: 20px;
+                font-size: 24px;
+            }
+
+            .mobile-none, .carousel-nav-box {
+                display: none;
+            }
+        }
+    }
+    .ads-block {
+        flex-direction: column;
+        .best-deal-carousel {
+            width: 100%;
+        }
+        .ads-block__text {
+            width: 100%;
+            margin-bottom: 30px;
+            h2 {
                 width: 80%;
                 text-align: center;
                 margin: auto;
+                margin-bottom: 20px;
             }
-
-            p, .carousel-nav-box {
-                display: none;
+            p {
+                text-align: center;
+                margin: auto;
+            }
+             .carousel-nav-box {
+                width: 100%;
+                 justify-content: space-between;
             }
         }
     }
@@ -841,10 +931,86 @@ footer {
             margin-bottom: 40px;
         }
     }
+    .start-today {
+        flex-direction: column;
+        .white-block__text {
+            align-items: center;
+            p {
+                text-align: center;
+            }
+        }
+        .max-icon-box {
+            margin-top: 60px;
+            width: 100%;
+            .max-icon-box-item {
+                margin-bottom: 40px;
+                max-width: 100%;
+                .white-block__text {
+                    align-items: flex-start;
+                    h2, p {
+                        text-align: left;
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+    .keys-block {
+        .keys-block__item {
+            width: 100%;
+        }
+    }
+    .reviews-block {
+        .reviews-nav-box {
+            top: 85px;
+            transform: translate(-50%, 0);
+        }
+        .slider-reviews {
+            padding: 0;
+        }
+        .slider-nav {
+            .slider-nav__item {
+                margin-left: 40px;
+                margin-right: 40px;
+            }
+        }
+    }
+    footer {
+        .header-top {
+            justify-content: center;
+            margin: 30px 0;
+            height: max-content;
+        }
+    }
+    .footer-body {
+        flex-direction: column;
+        align-items: center;
+        .left-column {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        .left-column, .right-column {
+            width: 100%;
+            .footer-item {
+                justify-content: center;
+                margin: 20px 0;
+                a {
+                    margin: 0 20px;
+                }
+            }
+        }
+    }
 }
 @media (max-width: 480px) {
-    .white-block .best-deal-carousel {
+    .white-block .best-deal-carousel,
+    .ads-block .best-deal-carousel {
         margin-left: 0;
+    }
+    .img-wrapper {
+        max-width: 100%;
+    }
+    .white-block {
+        padding-right: 15px;
     }
 }
 

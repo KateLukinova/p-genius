@@ -28,7 +28,7 @@ $( document ).ready(function() {
             {
                 breakpoint: 480,
                 settings: {
-                    slidesToShow: 1.2
+                    slidesToShow: 1
                 }
             }
         ]
@@ -58,22 +58,15 @@ $( document ).ready(function() {
         focusOnSelect: true,
         loop: true,
         arrows: false,
-        mobileFirst: true,
         responsive: [
             {
-                breakpoint: 990,
+                breakpoint: 540,
                 settings: {
-                    slidesToShow: 4,
+                    slidesToShow: 3,
+                    centerMode: true,
                     infinite: true
                 }
-            },
-            {
-                breakpoint: 1520,
-                settings: {
-                    slidesToShow: 5,
-                    infinite: true
-                }
-            },
+            }
         ]
     });
     $(".reviews-button-prev").click(function () {
