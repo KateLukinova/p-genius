@@ -115,8 +115,13 @@ h3 {
     display: flex;
     align-items: center;
 }
+.container {
+    max-width: 80%;
+}
 header {
     position: fixed;
+    top: 0;
+    left: 0;
     background-color: transparent;
     display: flex;
     justify-content: center;
@@ -293,6 +298,7 @@ nav {
     &__text {
         display: flex;
         flex-direction: column;
+        max-width: 370px;
         .button-primary {
             margin-top: 40px;
         }
@@ -374,8 +380,8 @@ nav {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    height: 310px;
-    max-width: 280px;
+    height: auto;
+    margin-right: 20px;
     img {
         width: 100%;
         min-height: 100%;
@@ -420,8 +426,8 @@ strong {
         justify-content: center;
         align-items: center;
         width: 48%;
-        max-width: 450px;
-        height: 210px;
+        max-width: 520px;
+        min-height: 210px;
         margin: 30px 10px;
         img {
             width: 100%;
@@ -493,6 +499,7 @@ strong {
     justify-content: center;
     align-items: center;
     position: relative;
+    padding-bottom: 120px;
     .slider-wrapper {
         display: flex;
         justify-content: center;
@@ -617,6 +624,7 @@ strong {
     .ads-block__text {
         display: flex;
         flex-direction: column;
+        max-width: 370px;
         h2, p {
             color: white;
         }
@@ -631,6 +639,10 @@ strong {
         align-items: center;
         img {
             min-height: auto;
+            margin-bottom: 7%;
+            &:nth-last-child(1) {
+                margin-bottom: 0;
+            }
         }
     }
 }
@@ -789,6 +801,198 @@ input {
     }
 }
 
+
+.video-page {
+    margin-top: 150px;
+    min-height: 80vh;
+    .title {
+        width: 100%;
+        max-width: 854px;
+        margin: 0 auto;
+    }
+
+    .caption {
+        width: 100%;
+        max-width: 854px;
+        margin: 0 auto;
+        padding: 20px 0;
+    }
+
+    .vid-main-wrapper {
+        width: 100%;
+        height: max-content;
+        min-height: 670px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding-left: 8px;
+        padding-top: 8px;
+        padding-bottom: 16px;
+        box-sizing: border-box;
+        display: flex;
+        overflow: hidden;
+    }
+    .main-video-block {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        h2 {
+            font-size: 24px;
+            margin: 16px 0;
+        }
+    }
+
+
+    /*  VIDEO PLAYER CONTAINER
+   ############################### */
+    .vid-container {
+        position: relative;
+        min-height: 460px;
+        width: 100%;
+    }
+
+    .vid-container iframe,
+    .vid-container object,
+    .vid-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-height: 460px;
+    }
+
+
+    /*  VIDEOS PLAYLIST
+     ############################### */
+    .vid-list-container {
+        position: relative;
+        width: 30%;
+        height: auto;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        &:after {
+            position: absolute;
+            content: '';
+            bottom: 0;
+            height: 58%;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+    }
+
+    .vid-list-container:hover, .vid-list-container:focus {
+        overflow-y: auto;
+    }
+
+    ul#vid-list {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    ul#vid-list li {
+        list-style: none;
+        padding: 6px 12px;
+        padding-right: 0;
+        box-sizing: border-box;
+        transition: all 0.5s ease;
+    }
+    ul#vid-list li:hover, ul#vid-list li:focus, ul#vid-list li.active {
+        background-color: #EA3410;
+        .desc {
+            color: white;
+        }
+        .vid-thumb .time {
+            background-color: #EA3410;
+        }
+    }
+
+    ul#vid-list li a {
+        text-decoration: none;
+        height: auto;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+    }
+
+    .vid-thumb {
+        position: relative;
+        height: 84px;
+        width: 136px;
+        min-width: 136px;
+        margin-right: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        img {
+            width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+        }
+        .time {
+            position: absolute;
+            bottom: 6px;
+            right: 0;
+            padding: 3px 8px;
+            background-color: #111111;
+            font-family: 'Gilroy', sans-serif;
+            font-size: 12px;
+            color: #FFFFFF;
+        }
+    }
+
+    .active-vid {
+        background:#3A3A3A;
+    }
+
+    #vid-list .desc {
+        font-family: 'Gilroy-Bold', sans-serif;
+        font-size: 14px;
+        line-height: 1;
+        color: #111111;
+        display: flex;
+        flex-direction: column;
+        width: calc(100% - 136px );
+        transition: all 0.5s ease;
+        span {
+            font-family: 'Gilroy', sans-serif;
+            margin-top: 15px;
+            height: 30px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+    .video-description {
+        font-family: 'Gilroy', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.44px;
+        color: #111111;
+        span {
+            color: #A6ADAF;
+        }
+    }
+    .link-document {
+        display: flex;
+        align-items: center;
+        font-family: 'Gilroy-Bold', sans-serif;
+        font-size: 14px;
+        line-height: 100%;
+        color: #111111;
+        margin: 20px 0;
+        img {
+            margin-right: 15px;
+        }
+    }
+
+}
 
 footer {
     display: flex;

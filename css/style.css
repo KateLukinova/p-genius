@@ -97,8 +97,13 @@ h3 {
   display: flex;
   align-items: center; }
 
+.container {
+  max-width: 80%; }
+
 header {
   position: fixed;
+  top: 0;
+  left: 0;
   background-color: transparent;
   display: flex;
   justify-content: center;
@@ -261,7 +266,8 @@ nav .nav-link {
   padding-bottom: 20px; }
   .white-block__text {
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    max-width: 370px; }
     .white-block__text .button-primary {
       margin-top: 40px; }
   .white-block .best-deal-carousel {
@@ -333,8 +339,8 @@ nav .nav-link {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  height: 310px;
-  max-width: 280px; }
+  height: auto;
+  margin-right: 20px; }
   .img-wrapper img {
     width: 100%;
     min-height: 100%;
@@ -373,8 +379,8 @@ strong {
     justify-content: center;
     align-items: center;
     width: 48%;
-    max-width: 450px;
-    height: 210px;
+    max-width: 520px;
+    min-height: 210px;
     margin: 30px 10px; }
     .keys-block__item img {
       width: 100%;
@@ -435,7 +441,8 @@ strong {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative; }
+  position: relative;
+  padding-bottom: 120px; }
   .reviews-block .slider-wrapper {
     display: flex;
     justify-content: center;
@@ -541,7 +548,8 @@ strong {
   padding: 50px 0 0 50px; }
   .ads-block .ads-block__text {
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    max-width: 370px; }
     .ads-block .ads-block__text h2, .ads-block .ads-block__text p {
       color: white; }
     .ads-block .ads-block__text .carousel-nav__button {
@@ -552,7 +560,10 @@ strong {
     justify-content: space-between;
     align-items: center; }
     .ads-block .double-item .img-wrapper img {
-      min-height: auto; }
+      min-height: auto;
+      margin-bottom: 7%; }
+      .ads-block .double-item .img-wrapper img:nth-last-child(1) {
+        margin-bottom: 0; }
 
 .text-black {
   color: #111111; }
@@ -695,6 +706,155 @@ input {
     margin-bottom: 25px; }
     .modal-end-block .end-block__item .end-block__name, .modal-end-block .end-block__item .end-block__description {
       color: black; }
+
+.video-page {
+  margin-top: 150px;
+  min-height: 80vh;
+ /*  VIDEO PLAYER CONTAINER
+############################### */
+  /*  VIDEOS PLAYLIST
+   ############################### */ }
+  .video-page .title {
+    width: 100%;
+    max-width: 854px;
+    margin: 0 auto; }
+  .video-page .caption {
+    width: 100%;
+    max-width: 854px;
+    margin: 0 auto;
+    padding: 20px 0; }
+  .video-page .vid-main-wrapper {
+    width: 100%;
+    height: max-content;
+    min-height: 670px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding-left: 8px;
+    padding-top: 8px;
+    padding-bottom: 16px;
+    box-sizing: border-box;
+    display: flex;
+    overflow: hidden; }
+  .video-page .main-video-block {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start; }
+    .video-page .main-video-block h2 {
+      font-size: 24px;
+      margin: 16px 0; }
+  .video-page .vid-container {
+    position: relative;
+    min-height: 460px;
+    width: 100%; }
+  .video-page .vid-container iframe,
+  .video-page .vid-container object,
+  .video-page .vid-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 460px; }
+  .video-page .vid-list-container {
+    position: relative;
+    width: 30%;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; }
+    .video-page .vid-list-container:after {
+      position: absolute;
+      content: '';
+      bottom: 0;
+      height: 58%;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.5); }
+  .video-page .vid-list-container:hover, .video-page .vid-list-container:focus {
+    overflow-y: auto; }
+  .video-page ul#vid-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; }
+  .video-page ul#vid-list li {
+    list-style: none;
+    padding: 6px 12px;
+    padding-right: 0;
+    box-sizing: border-box;
+    transition: all 0.5s ease; }
+  .video-page ul#vid-list li:hover, .video-page ul#vid-list li:focus, .video-page ul#vid-list li.active {
+    background-color: #EA3410; }
+    .video-page ul#vid-list li:hover .desc, .video-page ul#vid-list li:focus .desc, .video-page ul#vid-list li.active .desc {
+      color: white; }
+    .video-page ul#vid-list li:hover .vid-thumb .time, .video-page ul#vid-list li:focus .vid-thumb .time, .video-page ul#vid-list li.active .vid-thumb .time {
+      background-color: #EA3410; }
+  .video-page ul#vid-list li a {
+    text-decoration: none;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start; }
+  .video-page .vid-thumb {
+    position: relative;
+    height: 84px;
+    width: 136px;
+    min-width: 136px;
+    margin-right: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; }
+    .video-page .vid-thumb img {
+      width: 100%;
+      min-height: 100%;
+      object-fit: cover; }
+    .video-page .vid-thumb .time {
+      position: absolute;
+      bottom: 6px;
+      right: 0;
+      padding: 3px 8px;
+      background-color: #111111;
+      font-family: 'Gilroy', sans-serif;
+      font-size: 12px;
+      color: #FFFFFF; }
+  .video-page .active-vid {
+    background: #3A3A3A; }
+  .video-page #vid-list .desc {
+    font-family: 'Gilroy-Bold', sans-serif;
+    font-size: 14px;
+    line-height: 1;
+    color: #111111;
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 136px );
+    transition: all 0.5s ease; }
+    .video-page #vid-list .desc span {
+      font-family: 'Gilroy', sans-serif;
+      margin-top: 15px;
+      height: 30px;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+  .video-page .video-description {
+    font-family: 'Gilroy', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.44px;
+    color: #111111; }
+    .video-page .video-description span {
+      color: #A6ADAF; }
+  .video-page .link-document {
+    display: flex;
+    align-items: center;
+    font-family: 'Gilroy-Bold', sans-serif;
+    font-size: 14px;
+    line-height: 100%;
+    color: #111111;
+    margin: 20px 0; }
+    .video-page .link-document img {
+      margin-right: 15px; }
 
 footer {
   display: flex;
