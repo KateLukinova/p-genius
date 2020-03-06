@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no">
 <!--    <link rel="shortcut icon" type="image/x-icon" sizes="256x256" href="favicon.png"/>-->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.background-video.css">
+    <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Главная</title>
   </head>
 <body>
-    <header class="container-fluid">
+    <header class="container-fluid"  data-aos-duration="2000" data-aos="fade-up">
         <div class="container header-top">
             <a href="#" class="logo">
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -48,18 +50,23 @@
         <div class="radial"></div>
         <div class="container-fluid">
             <div class="block-video">
-                <div class="video-icon">
-                    <img src="img/icon-video.png" alt="">
-                </div>
-                <img src="img/video.jpg" alt="">
+<!--                <img src="img/video.jpg" alt="">-->
+                <video class="jquery-background-video" autoplay muted loop>
+                    <source src="video/1.mp4" type="video/mp4">
+                </video>
             </div>
         </div>
         <div class="container center-block">
-            <h1>Учись у тех кто<br>
+            <h1  data-aos="fade-up"
+                 data-aos-delay="1700"
+                 data-aos-duration="2000">Учись у тех кто<br>
                 достиг вершин<br>
                 в карьере
             </h1>
-            <div class="main-page__text-block">
+            <div class="main-page__text-block"
+                 data-aos="fade-up"
+                 data-aos-delay="2200"
+                 data-aos-duration="2000">
                 <h3>
                     Personal Genius сделал возможным получение знаний у тех, кто раньше был недоступен.
                 </h3>
@@ -67,8 +74,17 @@
             </div>
         </div>
         <div class="container end-block">
-            <a href="#" class="end-block__item" data-toggle="modal" data-target="#best-deal-modal">
-                <img src="img/img1.jpg" alt="">
+            <a href="#" class="end-block__item"
+               data-toggle="modal"
+               data-target="#best-deal-modal"
+               data-aos="fade-up"
+               data-aos-duration="2000"
+               data-aos-delay="2500">
+                <span class="video-wrapper">
+                    <video muted loop>
+                    <source src="video/1.mp4" type="video/mp4">
+                </video>
+                </span>
                 <div class="end-block__name">
                     Елена Шумилова
                 </div>
@@ -76,8 +92,15 @@
                     Искусство детской и семейной фотографии
                 </div>
             </a>
-            <a href="#" class="end-block__item" data-toggle="modal" data-target="#best-deal-modal">
-                <img src="img/img2.jpg" alt="">
+            <a href="#" class="end-block__item"
+               data-toggle="modal"
+               data-target="#best-deal-modal"
+               data-aos="fade-up"
+               data-aos-duration="2000"
+               data-aos-delay="2700">
+                <span class="video-wrapper">
+                    <img src="img/img2.jpg" alt="">
+                </span>
                 <div class="end-block__name">
                     Дарья Донцова
                 </div>
@@ -86,8 +109,15 @@
                     до первого бестселлера
                 </div>
             </a>
-            <a href="#" class="end-block__item" data-toggle="modal" data-target="#best-deal-modal">
-                <img src="img/img3.jpg" alt="">
+            <a href="#" class="end-block__item"
+               data-toggle="modal"
+               data-target="#best-deal-modal"
+               data-aos="fade-up"
+               data-aos-duration="2000"
+               data-aos-delay="2900">
+                <span class="video-wrapper">
+                    <img src="img/img3.jpg" alt="">
+                </span>
                 <div class="end-block__name">
                     Тимбаланд
                 </div>
@@ -195,19 +225,21 @@
             </div>
         </div>
         <div class="container-fluid white-block">
-            <div class="container start-today">
-                <div class="white-block__text">
-                    <h2>
-                        Почему стоит начать сегодня
-                    </h2>
-                    <p>
-                        Личный менеджер поможет с регистрацией, расскажет об использовании, порекомендует курсы
-                    </p>
-                    <a href="#" class="button-primary">начать</a>
+            <div class="container start-today" id="border-block">
+                <div class="wrap-div">
+                    <div class="white-block__text" id="moving-block">
+                        <h2>
+                            Почему стоит начать сегодня
+                        </h2>
+                        <p>
+                            Личный менеджер поможет с регистрацией, расскажет об использовании, порекомендует курсы
+                        </p>
+                        <a href="#" class="button-primary">начать</a>
+                    </div>
                 </div>
                 <div class="max-icon-box">
                     <div class="max-icon-box-item">
-                        <img src="img/comfort.png" alt="">
+                        <img src="img/1.gif" alt="">
                         <div class="white-block__text">
                             <h2>
                                 Удобно
@@ -218,7 +250,7 @@
                         </div>
                     </div>
                     <div class="max-icon-box-item">
-                        <img src="img/anywhere.png" alt="">
+                        <img src="img/2.gif" alt="">
                         <div class="white-block__text">
                             <h2>
                                 Обучайся где угодно
@@ -229,7 +261,7 @@
                         </div>
                     </div>
                     <div class="max-icon-box-item">
-                        <img src="img/sertificat.svg" alt="">
+                        <img src="img/3.gif" alt="">
                         <div class="white-block__text">
                             <h2>
                                 Вечный сертификат
@@ -242,7 +274,7 @@
                 </div>
             </div>
         </div>
-        <div class="container what-course">
+        <div class="container what-course" id="below-block">
             <div class="caption-rotate">Кейсы и отзывы</div>
             <div class="keys-block">
                 <a href="#" class="keys-block__item">
@@ -533,7 +565,7 @@
                                 <button class="button-primary">Получить консультацию</button>
                             </div>
                             <div class="form-group checkbox">
-                                <input type="checkbox" id="person-check">
+                                <input type="checkbox" id="person-check" checked>
                                 <label for="person-check">Даю согласие на обработку моих персональных данных</label>
                             </div>
                         </form>
@@ -714,7 +746,9 @@
     </div>
 
     <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.background-video.js"></script>
     <script src="js/jquery.mask.min.js"></script>
+    <script src="js/aos.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/datepicker.js"></script>

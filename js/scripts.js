@@ -116,7 +116,43 @@ $( document ).ready(function() {
         });
     });
 
+    AOS.init();
 
+    var initialBoardCoordinate = $('#moving-block').offset().top; //изначальная верхняя координата движущегося блока
+    var footerCoordinate = $('#below-block').offset().top; //верх блока, где надо остановиться
+    var footerHeight = $('#below-block').first().offset().top;// от низа сайта до места где остановиться
+    var boardHeight = $('#moving-block').height();
+    var headerHeight = $('#border-block').offset().top;
+
+    $(window).scroll(function () {
+        var currentCoordinate = $(window).scrollTop();
+
+        console.log('current ' + currentCoordinate)
+        console.log(headerHeight - 350)
+        console.log(footerCoordinate - 700)
+
+
+        if (currentCoordinate >= headerHeight - 280 && currentCoordinate < footerCoordinate - 700) {
+            $('#moving-block').css('position', 'fixed').css('top', '20vw').css('bottom', 'auto');
+        } else if (currentCoordinate >= footerCoordinate - 700) {
+            $('#moving-block').css('position', 'absolute').css('bottom', '0').css('top', 'auto');
+        } else {
+            $('#moving-block').css('position', 'static');
+        }
+    });
+
+    $('.jquery-background-video').bgVideo({fadeIn: 2000});
+
+//video-hover
+    var figure = $(".video-wrapper").hover( hoverVideo, hideVideo );
+
+    function hoverVideo(e) {
+        $('video', this).get(0).play();
+    }
+
+    function hideVideo(e) {
+        $('video', this).get(0).pause();
+    }
 });
 
 
