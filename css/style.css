@@ -100,6 +100,8 @@ h3 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center; }
+  .logo-text {
+    margin-left: 15px; }
 
 .container {
   max-width: 80%; }
@@ -147,18 +149,18 @@ section {
   width: 100%;
   height: auto; }
 
+.radial {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0) 61.98%, #000000 100%);
+  z-index: 1; }
+
 .main-page {
   background-color: #000000;
   position: relative; }
-  .main-page .radial {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background: -o-radial-gradient(50% 50%, 50% 50%, rgba(0, 0, 0, 0) 61.98%, #000000 100%);
-    background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0) 61.98%, #000000 100%);
-    z-index: 1; }
   .main-page .center-block {
     position: absolute;
     top: 50%;
@@ -294,6 +296,40 @@ nav .nav-link {
   max-width: 350px; }
   .main-page__text-block h3 {
     margin-bottom: 20px; }
+
+.button-box {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center; }
+  .button-box span {
+    font-family: 'Gilroy', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: right;
+    letter-spacing: 0.25px;
+    color: #A6ADAF;
+    margin-right: 8px; }
+
+.btn-transparent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  padding: 10px 27px;
+  border: 2px solid #111111;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Gilroy', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: center;
+  letter-spacing: 0.1px;
+  color: #111111;
+  min-width: 140px; }
 
 .button-primary {
   display: -webkit-box;
@@ -1061,11 +1097,7 @@ input {
 
 .video-page {
   margin-top: 150px;
-  min-height: 80vh;
- /*  VIDEO PLAYER CONTAINER
-############################### */
-  /*  VIDEOS PLAYLIST
-   ############################### */ }
+  min-height: 80vh; }
   .video-page .title {
     width: 100%;
     max-width: 854px;
@@ -1265,6 +1297,150 @@ input {
   .wrap-div .white-block__text {
     width: 100%; }
 
+.login-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: white; }
+  .login-page__cover {
+    position: relative;
+    width: 34%;
+    height: 100%;
+    background-image: url("../img/video.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 100%;
+    padding: 60px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    min-width: 460px; }
+  .login-page .text-end {
+    font-family: 'Gilroy', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.44px;
+    color: #FFFFFF;
+    z-index: 2; }
+    .login-page .text-end img {
+      margin-left: -20px;
+      margin-top: 8px; }
+  .login-page .author-name {
+    margin-top: 30px; }
+
+.l-header {
+  margin: 0 2%; }
+
+.login-form {
+  width: 66%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.form-caption {
+  font-family: 'Gilroy-Bold', sans-serif;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  color: #111111;
+  margin-bottom: 20px; }
+
+form.login {
+  width: 90%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; }
+  form.login h5 {
+    font-family: 'Gilroy', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: center;
+    letter-spacing: 0.25px;
+    color: #A6ADAF; }
+  form.login .button-primary {
+    width: 100%;
+    max-width: 100%; }
+  form.login .form-text {
+    font-family: 'Gilroy', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 1.3;
+    letter-spacing: 0.4px;
+    color: #111111;
+    margin: 25px 0; }
+    form.login .form-text a {
+      color: #111111;
+      text-decoration: underline; }
+
+.icon-box {
+  height: 40px;
+  margin: 15px 0; }
+
+.icon-box a {
+  margin: 15px;
+  min-height: 40px;
+  width: 40px; }
+
+.form-divider {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-family: 'Gilroy', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 0.25px;
+  color: #A6ADAF; }
+  .form-divider .line {
+    width: calc(50% - 18px);
+    height: 1px;
+    background-color: #F1F3F4; }
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 30px; }
+  .input-box label {
+    font-family: 'Gilroy', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.4;
+    letter-spacing: 0.25px;
+    color: #A6ADAF;
+    margin-bottom: 8px; }
+  .input-box input {
+    border: 1px solid #C6CACC; }
+  .input-box input::placeholder {
+    color: #C6CACC; }
+
+.forgot-password {
+  font-family: 'Gilroy', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 1.3;
+  letter-spacing: 0.4px;
+  text-decoration-line: underline;
+  color: #111111;
+  margin: 26px 0;
+  align-self: flex-start; }
+
 footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1341,7 +1517,22 @@ footer {
   .white-block .best-deal-carousel,
   .ads-block .best-deal-carousel {
     width: 65%;
-    margin-left: 5%; } }
+    margin-left: 5%; }
+
+  .login-page__cover {
+    display: none; }
+
+  .login-form {
+    width: 100%; }
+
+  .log-logo-text {
+    display: none; }
+
+  .logo-black {
+    fill: transparent; }
+
+  .logo-black path {
+    fill: black; } }
 @media (max-width: 768px) {
   .center-block {
     -webkit-box-orient: vertical;
