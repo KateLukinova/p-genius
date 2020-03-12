@@ -167,111 +167,185 @@ $( document ).ready(function() {
     $('.user-block').click(function () {
         $(this).find('.user-dropdown-content').toggleClass('is-active')
     })
+
+
+    //progress circle
+
+    if (window.location.href.indexOf("personal-page") > -1) {
+        AnimateMiniCircle("icon-progress-course", 0.45);
+
+        function AnimateMiniCircle(container_id, animatePercentage) {
+            var startColor = '#EA3410';
+            var endColor = '#EA3410';
+
+            var element = document.getElementById(container_id);
+            var circle = new ProgressBar.Circle(element, {
+                color: startColor,
+                trailColor: '#eee',
+                trailWidth: 20,
+                duration: 2000,
+                strokeWidth: 20,
+                // Set default step function for all animate calls
+                step: function (state, circle) {
+                    circle.path.setAttribute('stroke', state.color);
+                }
+            });
+
+            circle.animate(animatePercentage, {
+                from: {
+                    color: startColor
+                },
+                to: {
+                    color: endColor
+                }
+            });
+        }
+    }
+
+    if (window.location.href.indexOf("personal-course") > -1) {
+        AnimateCircle("circle-progress-course", 0.45);
+
+        function AnimateCircle(container_id, animatePercentage) {
+            var startColor = '#EA3410';
+            var endColor = '#EA3410';
+
+            var element = document.getElementById(container_id);
+            var circle = new ProgressBar.Circle(element, {
+                color: startColor,
+                trailColor: '#eee',
+                trailWidth: 10,
+                duration: 2000,
+                strokeWidth: 10,
+                text: {
+                    value: (animatePercentage * 100)  + '%',
+                    className: 'progressbar__label'
+                },
+                // Set default step function for all animate calls
+                step: function (state, circle) {
+                    circle.path.setAttribute('stroke', state.color);
+                }
+            });
+
+            circle.animate(animatePercentage, {
+                from: {
+                    color: startColor
+                },
+                to: {
+                    color: endColor
+                }
+            });
+        }
+    }
+
+
 });
 
 //cradit card mask
+if (window.location.href.indexOf("personal-page") > -1) {
 
-let ccNumberInput = document.querySelector('.cc-number-input'),
-    ccNumberPattern = /^\d{0,16}$/g,
-    ccNumberSeparator = " ",
-    ccNumberInputOldValue,
-    ccNumberInputOldCursor,
+    let ccNumberInput = document.querySelector('.cc-number-input'),
+        ccNumberPattern = /^\d{0,16}$/g,
+        ccNumberSeparator = " ",
+        ccNumberInputOldValue,
+        ccNumberInputOldCursor,
 
-    ccExpiryInput = document.querySelector('.cc-expiry-input'),
-    ccExpiryPattern = /^\d{0,4}$/g,
-    ccExpirySeparator = "/",
-    ccExpiryInputOldValue,
-    ccExpiryInputOldCursor,
+        ccExpiryInput = document.querySelector('.cc-expiry-input'),
+        ccExpiryPattern = /^\d{0,4}$/g,
+        ccExpirySeparator = "/",
+        ccExpiryInputOldValue,
+        ccExpiryInputOldCursor,
 
-    ccCVCInput = document.querySelector('.cc-cvc-input'),
-    ccCVCPattern = /^\d{0,3}$/g,
+        ccCVCInput = document.querySelector('.cc-cvc-input'),
+        ccCVCPattern = /^\d{0,3}$/g,
 
-    mask = (value, limit, separator) => {
-        var output = [];
-        for (let i = 0; i < value.length; i++) {
-            if ( i !== 0 && i % limit === 0) {
-                output.push(separator);
+        mask = (value, limit, separator) => {
+            var output = [];
+            for (let i = 0; i < value.length; i++) {
+                if ( i !== 0 && i % limit === 0) {
+                    output.push(separator);
+                }
+
+                output.push(value[i]);
             }
 
-            output.push(value[i]);
-        }
+            return output.join("");
+        },
+        unmask = (value) => value.replace(/[^\d]/g, ''),
+        checkSeparator = (position, interval) => Math.floor(position / (interval + 1)),
+        ccNumberInputKeyDownHandler = (e) => {
+            let el = e.target;
+            ccNumberInputOldValue = el.value;
+            ccNumberInputOldCursor = el.selectionEnd;
+        },
+        ccNumberInputInputHandler = (e) => {
+            let el = e.target,
+                newValue = unmask(el.value),
+                newCursorPosition;
 
-        return output.join("");
-    },
-    unmask = (value) => value.replace(/[^\d]/g, ''),
-    checkSeparator = (position, interval) => Math.floor(position / (interval + 1)),
-    ccNumberInputKeyDownHandler = (e) => {
-        let el = e.target;
-        ccNumberInputOldValue = el.value;
-        ccNumberInputOldCursor = el.selectionEnd;
-    },
-    ccNumberInputInputHandler = (e) => {
-        let el = e.target,
-            newValue = unmask(el.value),
-            newCursorPosition;
+            if ( newValue.match(ccNumberPattern) ) {
+                newValue = mask(newValue, 4, ccNumberSeparator);
 
-        if ( newValue.match(ccNumberPattern) ) {
-            newValue = mask(newValue, 4, ccNumberSeparator);
+                newCursorPosition =
+                    ccNumberInputOldCursor - checkSeparator(ccNumberInputOldCursor, 4) +
+                    checkSeparator(ccNumberInputOldCursor + (newValue.length - ccNumberInputOldValue.length), 4) +
+                    (unmask(newValue).length - unmask(ccNumberInputOldValue).length);
 
-            newCursorPosition =
-                ccNumberInputOldCursor - checkSeparator(ccNumberInputOldCursor, 4) +
-                checkSeparator(ccNumberInputOldCursor + (newValue.length - ccNumberInputOldValue.length), 4) +
-                (unmask(newValue).length - unmask(ccNumberInputOldValue).length);
-
-            el.value = (newValue !== "") ? newValue : "";
-        } else {
-            el.value = ccNumberInputOldValue;
-            newCursorPosition = ccNumberInputOldCursor;
-        }
-
-        el.setSelectionRange(newCursorPosition, newCursorPosition);
-
-        highlightCC(el.value);
-    },
-    highlightCC = (ccValue) => {
-        let ccCardType = '',
-            ccCardTypePatterns = {
-                amex: /^3/,
-                visa: /^4/,
-                mastercard: /^5/,
-                disc: /^6/,
-
-                genric: /(^1|^2|^7|^8|^9|^0)/,
-            };
-
-        for (const cardType in ccCardTypePatterns) {
-            if ( ccCardTypePatterns[cardType].test(ccValue) ) {
-                ccCardType = cardType;
-                break;
+                el.value = (newValue !== "") ? newValue : "";
+            } else {
+                el.value = ccNumberInputOldValue;
+                newCursorPosition = ccNumberInputOldCursor;
             }
-        }
 
-        let activeCC = document.querySelector('.cc-types__img--active'),
-            newActiveCC = document.querySelector(`.cc-types__img--${ccCardType}`);
+            el.setSelectionRange(newCursorPosition, newCursorPosition);
 
-        if (activeCC) activeCC.classList.remove('cc-types__img--active');
-        if (newActiveCC) newActiveCC.classList.add('cc-types__img--active');
-    },
-    ccExpiryInputKeyDownHandler = (e) => {
-        let el = e.target;
-        ccExpiryInputOldValue = el.value;
-        ccExpiryInputOldCursor = el.selectionEnd;
-    },
-    ccExpiryInputInputHandler = (e) => {
-        let el = e.target,
-            newValue = el.value;
+            highlightCC(el.value);
+        },
+        highlightCC = (ccValue) => {
+            let ccCardType = '',
+                ccCardTypePatterns = {
+                    amex: /^3/,
+                    visa: /^4/,
+                    mastercard: /^5/,
+                    disc: /^6/,
 
-        newValue = unmask(newValue);
-        if ( newValue.match(ccExpiryPattern) ) {
-            newValue = mask(newValue, 2, ccExpirySeparator);
-            el.value = newValue;
-        } else {
-            el.value = ccExpiryInputOldValue;
-        }
-    };
+                    genric: /(^1|^2|^7|^8|^9|^0)/,
+                };
 
-ccNumberInput.addEventListener('keydown', ccNumberInputKeyDownHandler);
-ccNumberInput.addEventListener('input', ccNumberInputInputHandler);
+            for (const cardType in ccCardTypePatterns) {
+                if ( ccCardTypePatterns[cardType].test(ccValue) ) {
+                    ccCardType = cardType;
+                    break;
+                }
+            }
 
-ccExpiryInput.addEventListener('keydown', ccExpiryInputKeyDownHandler);
-ccExpiryInput.addEventListener('input', ccExpiryInputInputHandler);
+            let activeCC = document.querySelector('.cc-types__img--active'),
+                newActiveCC = document.querySelector(`.cc-types__img--${ccCardType}`);
+
+            if (activeCC) activeCC.classList.remove('cc-types__img--active');
+            if (newActiveCC) newActiveCC.classList.add('cc-types__img--active');
+        },
+        ccExpiryInputKeyDownHandler = (e) => {
+            let el = e.target;
+            ccExpiryInputOldValue = el.value;
+            ccExpiryInputOldCursor = el.selectionEnd;
+        },
+        ccExpiryInputInputHandler = (e) => {
+            let el = e.target,
+                newValue = el.value;
+
+            newValue = unmask(newValue);
+            if ( newValue.match(ccExpiryPattern) ) {
+                newValue = mask(newValue, 2, ccExpirySeparator);
+                el.value = newValue;
+            } else {
+                el.value = ccExpiryInputOldValue;
+            }
+        };
+
+    ccNumberInput.addEventListener('keydown', ccNumberInputKeyDownHandler);
+    ccNumberInput.addEventListener('input', ccNumberInputInputHandler);
+
+    ccExpiryInput.addEventListener('keydown', ccExpiryInputKeyDownHandler);
+    ccExpiryInput.addEventListener('input', ccExpiryInputInputHandler);
+}
+

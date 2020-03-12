@@ -992,6 +992,13 @@ input {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
+input.valid {
+  border: 1px solid #111111 !important; }
+
+input.invalid {
+  border: 1px solid #EA3410 !important;
+  color: #EA3410; }
+
 .modal-pay {
   min-height: 540px;
   border-radius: 0;
@@ -1128,7 +1135,11 @@ input {
 .modal.show .modal-dialog, .modal.fade .modal-dialog {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%); }
+  transform: translate(-50%, -50%);
+  margin: 0; }
+
+.modal {
+  overflow: scroll; }
 
 .modal .best-deal-modal-dialog {
   width: 90%;
@@ -1595,7 +1606,8 @@ form.login {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  position: relative; }
+  position: relative;
+  cursor: pointer; }
   .user-block .user-name {
     font-family: 'Gilroy', sans-serif;
     font-style: normal;
@@ -1653,7 +1665,7 @@ form.login {
   border: 1px solid #E3E5E6;
   box-sizing: border-box;
   box-shadow: 0px 6px 30px rgba(8, 35, 48, 0.08);
-  padding: 15px 30px; }
+  padding: 15px 12px; }
   .user-dropdown-content a {
     font-family: 'Gilroy-Bold', sans-serif;
     font-style: normal;
@@ -1662,9 +1674,14 @@ form.login {
     display: flex;
     align-items: center;
     letter-spacing: 0.1px;
-    margin: 15px 0;
+    margin: 0;
     color: #111111;
-    white-space: nowrap; }
+    white-space: nowrap;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    transition: all 0.5s ease; }
+    .user-dropdown-content a:hover {
+      background-color: #F1F3F4; }
   .user-dropdown-content.is-active {
     display: flex; }
 
@@ -1679,7 +1696,8 @@ form.login {
   color: #A6ADAF; }
 
 .top-section {
-  margin-top: 130px; }
+  margin-top: 100px;
+  padding-top: 30px; }
 
 .user-course__item {
   background-color: white;
@@ -1838,6 +1856,7 @@ form.login {
       -ms-flex-align: center;
       align-items: center;
       border-radius: 100%;
+      min-width: 40px;
       width: 40px;
       height: 40px;
       margin-right: 12px; }
@@ -2073,6 +2092,86 @@ footer {
     -ms-flex-pack: end;
     justify-content: flex-end; }
 
+.logo-modal {
+  display: none; }
+
+#icon-progress-course {
+  width: 20px;
+  margin-right: 10px; }
+
+.progressbar__label {
+  font-family: 'Gilroy-Bold', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  color: #111111 !important; }
+
+#circle-progress-course {
+  width: 100px;
+  margin-right: 20px;
+  margin-left: -15px; }
+
+.caption-course-block {
+  box-shadow: none;
+  padding: 0; }
+  .caption-course-block .course-info {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    min-height: 195px; }
+
+.classes__item {
+  min-height: 120px;
+  align-items: center;
+  position: relative; }
+  .classes__item.disabled:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 5; }
+  .classes__item .classes-name {
+    font-family: 'Gilroy-Bold', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    letter-spacing: 0.15px;
+    color: #111111; }
+  .classes__item .course-info {
+    min-height: auto; }
+  .classes__item .column-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 70%; }
+    .classes__item .column-right .course-video {
+      min-height: 108px;
+      min-width: auto;
+      height: 100%;
+      width: 200px; }
+      .classes__item .column-right .course-video .keys-block__info {
+        bottom: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); }
+    .classes__item .column-right .course-info__footer {
+      justify-content: flex-end; }
+    .classes__item .column-right .checkbox label {
+      font-family: 'Gilroy-Bold', sans-serif;
+      font-style: normal;
+      font-size: 14px;
+      line-height: 22px;
+      letter-spacing: 0.1px;
+      color: #78909C;
+      margin-right: 30px; }
+    .classes__item .column-right .form-group label:before {
+      background-color: #1e7e34; }
+
 @media (max-width: 1201px) {
   .ads-block {
     padding-left: 0; }
@@ -2112,7 +2211,9 @@ footer {
     fill: black; }
 
   .course-video {
-    height: max-content; }
+    height: max-content;
+    min-width: auto;
+    width: 100%; }
     .course-video img, .course-video .cover {
       display: none; }
     .course-video .keys-block__info {
@@ -2131,7 +2232,57 @@ footer {
     .user-course__item .course-author {
       margin-bottom: 15px; }
     .user-course__item .desc {
-      display: none; } }
+      display: none; }
+    .user-course__item .course-info__item {
+      min-width: 120px; }
+
+  .course-pay {
+    justify-content: space-around; }
+
+  .course-card {
+    width: 100%;
+    max-width: 360px;
+    margin-bottom: 50px; }
+    .course-card .course-card-wrap {
+      padding: 15px; }
+    .course-card .course-img {
+      height: 140px;
+      align-items: flex-start;
+      margin-bottom: 15px; }
+
+  .classes__item {
+    position: relative;
+    align-items: flex-start; }
+    .classes__item .form-group.checkbox label {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      margin: 0; }
+      .classes__item .form-group.checkbox label span {
+        display: none; }
+    .classes__item .classes-desc {
+      display: none; }
+    .classes__item .column-right {
+      width: 100%; }
+      .classes__item .column-right .course-video {
+        position: absolute;
+        top: auto;
+        bottom: 0;
+        left: 15px;
+        width: max-content;
+        height: max-content;
+        transform: translate(0, 50%); }
+        .classes__item .column-right .course-video .keys-block__info {
+          width: max-content;
+          top: auto;
+          bottom: 0;
+          left: 0;
+          transform: translate(0, 50%); }
+      .classes__item .column-right .course-info__footer {
+        width: 100%; }
+        .classes__item .column-right .course-info__footer .course-info__item {
+          min-width: max-content;
+          margin-left: 25px; } }
 @media (max-width: 768px) {
   .center-block {
     -webkit-box-orient: vertical;
@@ -2160,10 +2311,9 @@ footer {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center; }
-    .what-course .what-course__item {
-      min-width: 210px; }
 
   .keys-block .keys-block__item {
+    min-width: 210px;
     width: 70%; }
 
   .feedback-block {
@@ -2192,7 +2342,22 @@ footer {
   .checkbox label {
     -webkit-box-align: start;
     -ms-flex-align: start;
-    align-items: flex-start; } }
+    align-items: flex-start; }
+
+  .course-info__item {
+    margin: 8px 0; }
+
+  .container {
+    max-width: inherit; }
+
+  .footer-mini .footer-item {
+    flex-direction: column; }
+    .footer-mini .footer-item a {
+      margin-bottom: 10px !important; }
+  .footer-mini .mob-column-reverse {
+    flex-direction: column-reverse; }
+  .footer-mini .soc {
+    margin-bottom: 10px; } }
 @media (max-width: 640px) {
   .main-page .center-block {
     z-index: 4;
@@ -2379,7 +2544,15 @@ footer {
           margin: 0 20px; }
 
   .logo-text {
-    display: none; } }
+    display: none; }
+
+  .caption-course-block .course-info {
+    flex-direction: column; }
+    .caption-course-block .course-info #circle-progress-course {
+      margin-left: 0; }
+  .caption-course-block .course-name {
+    text-align: center;
+    margin-top: 15px; } }
 @media (max-width: 480px) {
   .white-block .best-deal-carousel,
   .ads-block .best-deal-carousel {
@@ -2389,7 +2562,36 @@ footer {
     max-width: 100%; }
 
   .white-block {
-    padding-right: 15px; } }
+    padding-right: 15px; }
+
+  .modal-pay {
+    min-height: auto;
+    background-color: white; }
+    .modal-pay .modal-body a {
+      width: 100%; }
+
+  .modal .dialog-pay {
+    width: 100%;
+    height: 100vh; }
+    .modal .dialog-pay .modal-header {
+      background-color: white;
+      padding: 1rem;
+      justify-content: flex-start; }
+      .modal .dialog-pay .modal-header .modal-caption {
+        display: none; }
+
+  .cc-modal-body {
+    width: 100%;
+    box-shadow: none;
+    padding: 0 15px 30px 15px; }
+
+  .logo-modal {
+    display: flex; }
+
+  .cc-modal-body .button-primary {
+    position: static;
+    transform: none;
+    margin-top: 25px; } }
 /*@media (max-width: 1300px)*/
 
 /*# sourceMappingURL=style.css.map */
