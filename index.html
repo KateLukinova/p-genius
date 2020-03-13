@@ -50,10 +50,11 @@
     </header>
     <section class="main-page">
         <div class="radial"></div>
+        <div class="over-opacity"></div>
         <div class="container-fluid">
             <div class="block-video">
 <!--                <img src="img/video.jpg" alt="">-->
-                <video class="jquery-background-video" autoplay muted loop>
+                <video class="jquery-background-video" autoplay muted loop="loop">
                     <source src="video/1.mp4" type="video/mp4">
                 </video>
             </div>
@@ -65,6 +66,7 @@
                 достиг вершин<br>
                 в карьере
             </h1>
+            <a href="#" class="button-play play" data-toggle="modal" data-target="#video-modal"></a>
             <div class="main-page__text-block"
                  data-aos="fade-up"
                  data-aos-delay="2200"
@@ -140,15 +142,15 @@
                     Personal Genius сделал возможным получение знаний у тех, кто раньше был недоступен.
                 </p>
                 <div class="carousel-nav-box">
-                    <div class="carousel-nav__button carousel-button-prev">
+                    <div class="carousel-nav__button carousel-button-prev mob-not-prev">
                         <img src="img/arrow-left.svg" alt="">
                     </div>
-                    <div class="carousel-nav__button carousel-button-next">
+                    <div class="carousel-nav__button carousel-button-next mob-not-next">
                         <img src="img/arrow.svg" alt="">
                     </div>
                 </div>
             </div>
-            <div class="best-deal-carousel">
+            <div class="best-deal-carousel mob-not-carousel">
                 <a href="#" class="best-deal-carousel__item">
                     <div class="img-wrapper">
                         <img src="img/carousel-img1.jpg" alt="">
@@ -229,7 +231,7 @@
         <div class="container-fluid white-block">
             <div class="container start-today" id="border-block">
                 <div class="wrap-div">
-                    <div class="white-block__text" id="moving-block">
+                    <div class="white-block__text sticky" id="moving-block">
                         <h2>
                             Почему стоит начать сегодня
                         </h2>
@@ -521,15 +523,15 @@
                             <p>
                                 Personal Genius сделал возможным получение знаний у тех, кто раньше был недоступен.                    </p>
                             <div class="carousel-nav-box">
-                                <div class="carousel-nav__button carousel-button-prev">
+                                <div class="carousel-nav__button carousel-button-prev mob-prev">
                                     <img src="img/arrow-left.svg" alt="">
                                 </div>
-                                <div class="carousel-nav__button carousel-button-next">
+                                <div class="carousel-nav__button carousel-button-next mob-next">
                                     <img src="img/arrow.svg" alt="">
                                 </div>
                             </div>
                         </div>
-                        <div class="best-deal-carousel">
+                        <div class="best-deal-carousel mob-carousel">
                             <a href="#" class="best-deal-carousel__item">
                                 <div class="img-wrapper">
                                     <img src="img/ads-img1.jpg" alt="">
@@ -563,7 +565,7 @@
                         </p>
                         <form action="#" class="form-feedback">
                             <div class="input-box">
-                                <input type="text" class="phone">
+                                <div class="input"><input type="text" class="phone"></div>
                                 <button class="button-primary">Получить консультацию</button>
                             </div>
                             <div class="form-group checkbox">
@@ -636,12 +638,13 @@
                     </a>
                 </div>
                 <div class="footer-item">
-                    <a href="#">© personalg.com - 2020</a>
+                    <a href="#">support@personalg.com</a>
+
                 </div>
             </div>
             <div class="right-column">
                 <div class="footer-item">
-                    <a href="#">support@personalg.com</a>
+                    <a href="#">© personalg.com - 2020</a>
                 </div>
                 <div class="footer-item">
                     <a href="#">
@@ -742,6 +745,24 @@
                             </div>
                         </a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="video-modal" tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true">
+        <div class="modal-dialog video-modal-dialog" role="document">
+            <button type="button" class="close" data-dismiss="modal">
+                <span aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z" fill="#C6CACC"/>
+                            </svg>
+                </span>
+            </button>
+            <div class="modal-content">
+                <div class="block-video">
+                    <video class="jquery-background-video" autoplay muted loop>
+                        <source src="video/1.mp4" type="video/mp4">
+                    </video>
                 </div>
             </div>
         </div>

@@ -1,4 +1,10 @@
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+}
+
 $( document ).ready(function() {
+//загрузка сверху страницы
+
 
     $(window).scroll(function () {
         if (this.pageYOffset > 0) {
@@ -8,12 +14,42 @@ $( document ).ready(function() {
         }
     }).trigger('scroll');
 
-    $('.best-deal-carousel').slick({
+    var screenWidth = $(window).width();
+    if (screenWidth > 480) {
+        $('.mob-not-carousel').slick({
+            loop: true,
+            infinite: false,
+            arrows: false,
+            centerMode: false,
+            slidesToShow: 2.4,
+            responsive: [
+                {
+                    breakpoint: 1025,
+                    settings: {
+                        slidesToShow: 2.1
+                    }
+                },
+                {
+                    breakpoint: 990,
+                    settings: {
+                        slidesToShow: 1.3
+                    }
+                },
+                {
+                    breakpoint: 640,
+                    settings: {
+                        slidesToShow: 1.5
+                    }
+                }
+            ]
+        });
+    }
+    $('.mob-carousel').slick({
         loop: true,
         infinite: false,
         arrows: false,
         centerMode: false,
-        slidesToShow: 2.3,
+        slidesToShow: 2.4,
         responsive: [
             {
                 breakpoint: 1025,
@@ -30,23 +66,25 @@ $( document ).ready(function() {
             {
                 breakpoint: 640,
                 settings: {
-                    slidesToShow: 1.5
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
                     slidesToShow: 1
                 }
             }
         ]
     });
 
-    $(".carousel-button-prev").click(function () {
-        $('.best-deal-carousel').slick('slickPrev');
+
+    $(".mob-not-prev").click(function () {
+        $('.mob-not-carousel').slick('slickPrev');
     });
-    $(".carousel-button-next").click(function () {
-        $('.best-deal-carousel').slick('slickNext');
+    $(".mob-not-next").click(function () {
+        $('.mob-not-carousel').slick('slickNext');
+    });
+
+    $(".mob-prev").click(function () {
+        $('.mob-carousel').slick('slickPrev');
+    });
+    $(".mob-next").click(function () {
+        $('.mob-carousel').slick('slickNext');
     });
 
     //modal trigger
@@ -99,7 +137,7 @@ $( document ).ready(function() {
     });
 
     //mask tel
-    $('.phone').mask('+0 (000) 000 00 00', {placeholder: "+7 (_ _ _) _ _ _  _ _  _ _"});
+    $('.phone').mask('(000) 000 00 00', {placeholder: "(_ _ _) _ _ _  _ _  _ _"});
 
     //scroll anchor
     // $(".btn-anchor").click(function() {
@@ -121,30 +159,8 @@ $( document ).ready(function() {
             $('.vid-item:nth-child('+current_index+') .thumb').addClass('active');
         });
     });
-    if (window.location.href.indexOf("index") > -1) {
-        var initialBoardCoordinate = $('#moving-block').offset().top; //изначальная верхняя координата движущегося блока
-        var footerCoordinate = $('#below-block').offset().top; //верх блока, где надо остановиться
-        var footerHeight = $('#below-block').first().offset().top;// от низа сайта до места где остановиться
-        var boardHeight = $('#moving-block').height();
-        var headerHeight = $('#border-block').offset().top;
-
-
-        if (screen.width > 640) {
-            $(window).scroll(function () {
-                var currentCoordinate = $(window).scrollTop();
-
-                if (currentCoordinate >= headerHeight - 280 && currentCoordinate < footerCoordinate - 700) {
-                    $('#moving-block').css('position', 'fixed').css('top', '20vw').css('bottom', 'auto');
-                } else if (currentCoordinate >= footerCoordinate - 1000) {
-                    $('#moving-block').css('position', 'absolute').css('bottom', '0').css('top', 'auto');
-                } else {
-                    $('#moving-block').css('position', 'static');
-                }
-            });
-        }
-
+    if (window.location.href.indexOf("index") > -1 || window.location.href == "http://obobrazovanii.ru/") {
         $('.jquery-background-video').bgVideo({fadeIn: 2000});
-
     }
     AOS.init({disable: 'mobile'});
 
