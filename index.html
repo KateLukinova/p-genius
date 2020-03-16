@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no">
 <!--    <link rel="shortcut icon" type="image/x-icon" sizes="256x256" href="favicon.png"/>-->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/jquery.background-video.css">
     <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/style.css">
@@ -53,8 +52,7 @@
         <div class="over-opacity"></div>
         <div class="container-fluid">
             <div class="block-video">
-<!--                <img src="img/video.jpg" alt="">-->
-                <video class="jquery-background-video" autoplay muted loop="loop">
+                <video muted loop autoplay>
                     <source src="video/1.mp4" type="video/mp4">
                 </video>
             </div>
@@ -204,25 +202,38 @@
         <div class="container what-course">
             <div class="caption-rotate">Что в курсах</div>
             <div class="what-course__item">
-                <img src="img/icon1.svg" alt="">
+                <div class="info-red">
+                    <div class="text-dinamic">4+</div>
+                    <div class="text-static">Часа</div>
+                </div>
                 <p>
                     Настоящего полезного контента
                 </p>
             </div>
             <div class="what-course__item">
-                <img src="img/users.svg" alt="">
+                <div class="info-red">
+                    <img src="img/users.svg" alt="">
+                    <div class="text-static">Сообщество</div>
+                </div>
                 <p>
                     Обсуждай каждый урок с единомышленниками
                 </p>
             </div>
             <div class="what-course__item">
-                <img src="img/icon3.svg" alt="">
+                <div class="info-red">
+                    <div class="text-dinamic">12</div>
+                    <div class="text-static">Уроков</div>
+                </div>
                 <p>
                     В каждом курсе
                 </p>
             </div>
             <div class="what-course__item">
-                <img src="img/file-text.svg" alt="">
+                <div class="info-red">
+                    <img src="img/file-text.svg" alt="">
+                    <div class="text-static">Доп.материалы</div>
+                </div>
+
                 <p>
                     Дополнительные материалы в каждом курсе
                 </p>
@@ -769,7 +780,7 @@
     </div>
 
     <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.background-video.js"></script>
+    <script src="js/jquery.vide.min.js"></script>
     <script src="js/jquery.mask.min.js"></script>
     <script src="js/aos.js"></script>
     <script src="js/slick.min.js"></script>

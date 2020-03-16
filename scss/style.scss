@@ -578,15 +578,31 @@ nav {
 .caption-rotate.top {
     top: 420px;
 }
+.info-red {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Gilroy-Bold', sans-serif;
+    font-style: normal;
+    text-align: center;
+    color: #EA3410;
+    height: 95px;
+    .text-dinamic {
+        font-size: 70px;
+        line-height: 1;
+    }
+    .text-static {
+        font-size: 20px;
+    }
+}
 .what-course {
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+    align-items: flex-start;
     min-height: 218px;
     padding: 140px 0;
     padding-left: 40px;
@@ -596,9 +612,6 @@ nav {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
@@ -1643,7 +1656,7 @@ input.invalid {
     align-items: center;
     width: 100%;
     min-height: 100vh;
-    height: auto;
+    height: 100vh;
     background-color: white;
     &__cover {
         position: relative;
@@ -2812,6 +2825,12 @@ footer {
                 width: 100%;
             }
         }
+    }
+    .header-top {
+        padding: 0 15px!important;
+    }
+    .login-page {
+        height: auto;
     }
 }
 

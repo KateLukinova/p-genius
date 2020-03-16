@@ -510,6 +510,31 @@ nav .nav-link {
 .caption-rotate.top {
   top: 420px; }
 
+.info-red {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: 'Gilroy-Bold', sans-serif;
+  font-style: normal;
+  text-align: center;
+  color: #EA3410;
+  height: 95px; }
+  .info-red .text-dinamic {
+    font-size: 70px;
+    line-height: 1; }
+  .info-red .text-static {
+    font-size: 20px; }
+
 .what-course {
   position: relative;
   display: -webkit-box;
@@ -518,9 +543,9 @@ nav .nav-link {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   min-height: 218px;
   padding: 140px 0;
   padding-left: 40px;
@@ -530,9 +555,6 @@ nav .nav-link {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
@@ -1448,7 +1470,7 @@ input.invalid {
   align-items: center;
   width: 100%;
   min-height: 100vh;
-  height: auto;
+  height: 100vh;
   background-color: white; }
   .login-page__cover {
     position: relative;
@@ -2486,7 +2508,13 @@ footer {
   .form-feedback .input-box {
     margin-top: 0; }
     .form-feedback .input-box .input {
-      width: 100%; } }
+      width: 100%; }
+
+  .header-top {
+    padding: 0 15px !important; }
+
+  .login-page {
+    height: auto; } }
 @media (max-width: 640px) {
   .main-page .center-block {
     z-index: 4;

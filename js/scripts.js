@@ -1,10 +1,9 @@
+//загрузка сверху страницы
 window.onbeforeunload = function () {
     window.scrollTo(0, 0);
 }
 
 $( document ).ready(function() {
-//загрузка сверху страницы
-
 
     $(window).scroll(function () {
         if (this.pageYOffset > 0) {
@@ -159,9 +158,7 @@ $( document ).ready(function() {
             $('.vid-item:nth-child('+current_index+') .thumb').addClass('active');
         });
     });
-    if (window.location.href.indexOf("index") > -1 || window.location.href == "http://obobrazovanii.ru/") {
-        $('.jquery-background-video').bgVideo({fadeIn: 2000});
-    }
+
     AOS.init({disable: 'mobile'});
 
 
