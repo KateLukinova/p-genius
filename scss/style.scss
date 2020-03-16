@@ -308,6 +308,7 @@ nav {
 
 }
 .sticky {
+    position: -webkit-sticky;
     position: sticky;
     top: 250px;
 }
@@ -433,7 +434,7 @@ nav {
     margin-bottom: 50px;
     &__item {
         width: 30%;
-        max-width: 300px;
+        max-width: 280px;
         margin: 0 5px;
         overflow: hidden;
         .video-wrapper {
@@ -574,14 +575,15 @@ nav {
         }
     }
 }
+.caption-rotate.top {
+    top: 420px;
+}
 .what-course {
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: end;
-    -ms-flex-pack: end;
-    justify-content: flex-end;
+    justify-content: center;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
@@ -632,7 +634,7 @@ nav {
     -ms-transform: rotate(-90deg) translateX(50%);
     transform: rotate(-90deg) translateX(50%);
     white-space: nowrap;
-    width: 40px;
+    width: 25px;
 
 }
 .img-wrapper {
@@ -1081,6 +1083,9 @@ strong {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
         flex-direction: row;
         -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -1637,7 +1642,8 @@ input.invalid {
     -ms-flex-align: center;
     align-items: center;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     background-color: white;
     &__cover {
         position: relative;
@@ -2125,6 +2131,7 @@ form.login {
             flex-direction: column;
         }
         .play-icon {
+            position: relative;
             background-color: #EA3410;
             display: -webkit-box;
             display: -ms-flexbox;
@@ -2452,6 +2459,17 @@ footer {
     -ms-flex-align: center;
     align-items: center;
     position: relative;
+    &.disabled .play-icon:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border-radius: 100%;
+        background-color: rgba(255, 255, 255, 0.7);
+        z-index: 6;
+    }
     &.disabled:after {
         content: "";
         position: absolute;
@@ -2807,6 +2825,8 @@ footer {
             margin-top: 30px;
             top: auto;
             bottom: 20px;
+            -webkit-transform: translate(-50%, 0);
+            -ms-transform: translate(-50%, 0);
             transform: translate(-50%, 0);
             h1 {
                 font-size: 34px;
@@ -3110,6 +3130,12 @@ footer {
             }
 
         }
+    }
+    .l-header {
+        background-color: white;
+    }
+    .login-form {
+        margin: 90px 0;
     }
 }
 

@@ -8,9 +8,9 @@ $( document ).ready(function() {
 
     $(window).scroll(function () {
         if (this.pageYOffset > 0) {
-            $('header').addClass('active');
+            $('.header-scroll').addClass('active');
         } else {
-            $('header').removeClass('active');
+            $('.header-scroll').removeClass('active');
         }
     }).trigger('scroll');
 

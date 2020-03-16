@@ -390,7 +390,7 @@ nav .nav-link {
   margin-bottom: 50px; }
   .end-block__item {
     width: 30%;
-    max-width: 300px;
+    max-width: 280px;
     margin: 0 5px;
     overflow: hidden; }
     .end-block__item .video-wrapper {
@@ -507,14 +507,17 @@ nav .nav-link {
     .carousel-nav-box .carousel-nav__button.carousel-button-prev {
       margin-right: 15px; }
 
+.caption-rotate.top {
+  top: 420px; }
+
 .what-course {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -562,7 +565,7 @@ nav .nav-link {
   -webkit-transform: rotate(-90deg) translateX(50%);
   transform: rotate(-90deg) translateX(50%);
   white-space: nowrap;
-  width: 40px; }
+  width: 25px; }
 
 .img-wrapper {
   display: -webkit-box;
@@ -958,8 +961,8 @@ strong {
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
@@ -1444,7 +1447,8 @@ input.invalid {
   -ms-flex-align: center;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   background-color: white; }
   .login-page__cover {
     position: relative;
@@ -1893,6 +1897,7 @@ form.login {
       -ms-flex-direction: column;
       flex-direction: column; }
     .course-video-box .keys-block__info .play-icon {
+      position: relative;
       background-color: #EA3410;
       display: -webkit-box;
       display: -ms-flexbox;
@@ -2191,6 +2196,16 @@ footer {
   -ms-flex-align: center;
   align-items: center;
   position: relative; }
+  .classes__item.disabled .play-icon:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 6; }
   .classes__item.disabled:after {
     content: "";
     position: absolute;
@@ -2481,7 +2496,7 @@ footer {
     top: auto;
     bottom: 20px;
     -webkit-transform: translate(-50%, 0);
-            transform: translate(-50%, 0); }
+    transform: translate(-50%, 0); }
     .main-page .center-block h1 {
       font-size: 34px; }
     .main-page .center-block h3 {
@@ -2728,7 +2743,13 @@ footer {
     max-width: 270px;
     margin: auto; }
     .white-block .best-deal-carousel__item .end-block__description {
-      margin-bottom: 30px; } }
+      margin-bottom: 30px; }
+
+  .l-header {
+    background-color: white; }
+
+  .login-form {
+    margin: 90px 0; } }
 /*@media (max-width: 1300px)*/
 
 /*# sourceMappingURL=style.css.map */
