@@ -6,10 +6,14 @@ window.onbeforeunload = function () {
 $( document ).ready(function() {
 
     $(window).scroll(function () {
-        if (this.pageYOffset > 0) {
-            $('.header-scroll').addClass('active');
+        if ($(this).scrollTop() > 0 && $(this).scrollTop() < 70) {
+            $('.header-scroll').css('background-color', 'rgba(0, 0, 0, 0.29)');
+        } else if ($(this).scrollTop() > 70 && $(this).scrollTop() < 150) {
+            $('.header-scroll').css('background-color', 'rgba(0, 0, 0, 0.7)');
+        } else if ($(this).scrollTop() > 150){
+            $('.header-scroll').css('background-color', 'rgba(0, 0, 0, 1)');
         } else {
-            $('.header-scroll').removeClass('active');
+            $('.header-scroll').css('background-color', 'rgba(0, 0, 0, 0)');
         }
     }).trigger('scroll');
 
@@ -249,6 +253,18 @@ $( document ).ready(function() {
             });
         }
     }
+
+    // аватар из букв
+
+    var avatarElement = $('.avatar-initials'),
+
+        name = avatarElement.data('name'),
+        initials = name.split(' ')[0].charAt(0).toUpperCase() + name.split(" ")[1].charAt(0).toUpperCase();
+
+    avatarElement.css({
+        'background-color': '#ffffff',
+    })
+        .html(initials);
 
 
 });

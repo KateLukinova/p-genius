@@ -52,7 +52,7 @@
             <div class="icon-box">
                 <a href="#">
                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M20 0C8.95431 0 0 8.95431 0 20C0 31.0457 8.95431 40 20 40C31.0457 40 40 31.0457 40 20C40 8.95431 31.0457 0 20 0ZM22.0847 20.8785V31.7595H17.5827V20.8789H15.3334V17.1292H17.5827V14.8779C17.5827 11.819 18.8527 9.99998 22.4611 9.99998H25.4652V13.7501H23.5874C22.1828 13.7501 22.0898 14.2741 22.0898 15.2521L22.0847 17.1288H25.4864L25.0884 20.8785H22.0847Z" fill="#111111"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M20 0C8.95431 0 0 8.95431 0 20C0 31.0457 8.95431 40 20 40C31.0457 40 40 31.0457 40 20C40 8.95431 31.0457 0 20 0ZM22.0847 20.8785V31.7595H17.5827V20.8789H15.3334V17.1292H17.5827V14.8779C17.5827 11.819 18.8527 9.99998 22.4611 9.99998H25.4652V13.7501H23.5874C22.1828 13.7501 22.0898 14.2741 22.0898 15.2521L22.0847 17.1288H25.4864L25.0884 20.8785H22.0847Z"/>
                     </svg>
                 </a>
                 <a href="#">
@@ -71,17 +71,20 @@
                 <span>или</span>
                 <span class="line"></span>
             </div>
-            <div class="input-box">
+            <div class="input-box invalid">
                 <label for="login-email">Почта</label>
-                <input type="email" placeholder="ivanov@gmail.com" id="login-email">
+                <input type="email" placeholder="ivanov@gmail.com" id="login-email" required>
+                <span class="input-hint">Заполните поле</span>
             </div>
-            <div class="input-box">
+            <div class="input-box valid">
                 <label for="login-password">Пароль</label>
-                <input type="password" placeholder="•••••••••" id="login-password">
+                <input type="password" placeholder="•••••••••" id="login-password" required>
+                <span class="input-hint">Заполните поле</span>
             </div>
             <div class="input-box">
                 <label for="login-phone">Номер телефона</label>
-                <input type="text" class="phone" id="login-phone">
+                <input type="text" class="phone" id="login-phone" required>
+                <span class="input-hint">Заполните поле</span>
             </div>
             <div class="form-text">
                 Нажимая на кнопку «Зарегистрироваться», вы даете <a href="#">Согласие на обработку персональных данных</a> и соглашаетесь c
