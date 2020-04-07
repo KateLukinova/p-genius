@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Личный кабинет</title>
+    <title>Настройки профиля</title>
 </head>
 <body>
 <header class="container-fluid header-border">
@@ -40,251 +40,80 @@
     </div>
 </header>
 
-<section class="top-section">
-    <div class="container">
-        <div class="caption">Мои курсы</div>
-        <div class="user-course">
-            <div class="user-course__item">
-                <div class="course-info">
-                    <div class="course-info__header">
-                        <div class="course-name">
-                            Актерское мастерство от А до Я
+<section class="container settings-page">
+    <div class="settings-content">
+        <div class="caption">Настройки профиля</div>
+        <form action="#" class="settings">
+            <div class="form-main">
+                <div class="form-column">
+                    <div class="form-row">
+                        <div class="input-box">
+                            <label for="settings-first-name">Имя</label>
+                            <input type="text" id="settings-first-name">
                         </div>
-                        <div class="course-author">
-                            <div class="author-photo">
-                                <img src="img/author.jpg" alt="">
-                            </div>
-                            <div class="author-name">
-                                Юлия Егорова
-                            </div>
-                            <div class="author-deal">
-                                Журналист GQ
-                            </div>
+                        <div class="input-box">
+                            <label for="settings-last-name">Фамилия</label>
+                            <input type="text" id="settings-last-name">
                         </div>
                     </div>
-                    <div class="course-info__footer">
-                        <div class="course-info__item">
-                            <div id="icon-progress-course"></div>
-                            <span class="count-progress">45%</span> <span class="desc">Прогресс курса</span>
+                    <div class="form-row">
+                        <div class="input-box">
+                            <label for="settings-email">Email</label>
+                            <input type="email" id="settings-email">
                         </div>
-                        <div class="course-info__item">
-                            <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H14V12H0V0ZM2 2H12V10H2V2Z" fill="#78909C"/>
-                                <path d="M16 3.66667L20 1V9L16 6.33333V3.66667Z" fill="#78909C"/>
-                            </svg>
-                            <span class="count-classes">15</span> <span class="desc">занятий</span>
-                        </div>
-                        <div class="course-info__item">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 4H14V16H0V4ZM2 6H12V14H2V6Z" fill="#78909C"/>
-                                <path d="M16 7.66667L20 5V13L16 10.3333V7.66667Z" fill="#78909C"/>
-                            </svg>
-                            <span class="counte-time">43 ч. 21 <span class="desc">мин</span>
-                        </div>
-                        <div class="course-info__item">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2L17 7V18H3L3 2L12 2ZM11 8H15.5L11 3.5V8ZM15 16V10H9V4H5V16H15Z" fill="#78909C"/>
-                            </svg>
-                            <span class="count-doc">12</span> <span class="desc">доп. материалов</span>
+                        <div class="input-box">
+                            <label for="settings-phone">Телефон</label>
+                            <input type="text" class="phone" id="settings-phone">
                         </div>
                     </div>
                 </div>
-                <div class="course-video">
-                    <a href="#" class="course-video-box">
-                        <img src="img/keys-img1.jpg" alt="">
-                        <div class="keys-block__info">
-                            <span class="play-icon">
-                                <svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <mask id="path-1-inside-1" fill="white">
-                                <path d="M0.862793 0.941162L9.96931 7.96077L0.862793 14.9804V0.941162Z"/>
-                            </mask>
-                            <path d="M0.862793 0.941162L8.79939 -9.35497C4.87501 -12.38 -0.427733 -12.9111 -4.87411 -10.7245C-9.32049 -8.53788 -12.1372 -4.0138 -12.1372 0.941162H0.862793ZM9.96931 7.96077L17.9059 18.2569C21.0989 15.7956 22.9693 11.9923 22.9693 7.96077C22.9693 3.92927 21.0989 0.125899 17.9059 -2.33536L9.96931 7.96077ZM0.862793 14.9804H-12.1372C-12.1372 19.9353 -9.32049 24.4594 -4.87411 26.646C-0.427733 28.8327 4.87501 28.3016 8.79939 25.2765L0.862793 14.9804ZM-7.07381 11.2373L2.03271 18.2569L17.9059 -2.33536L8.79939 -9.35497L-7.07381 11.2373ZM2.03271 -2.33536L-7.07381 4.68424L8.79939 25.2765L17.9059 18.2569L2.03271 -2.33536ZM13.8628 14.9804V0.941162H-12.1372V14.9804H13.8628Z" fill="white" mask="url(#path-1-inside-1)"/>
-                        </svg>
-                            </span>
-                            <div class="keys-block__text">
-                                <div class="text-help">
-                                    Продолжть просмотр
-                                </div>
-                                <div class="classes-name">
-                                    Искусство детской и семейной фотографии
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cover"></div>
-                    </a>
+                <div class="avatar-upload">
+                    <div class="avatar-edit">
+                        <input type='file' id="image-upload" accept=".png, .jpg, .jpeg" />
+                        <label for="image-upload"></label>
+                        <img class="profile-user-img img-responsive img-circle" id="image-preview" src="img/video.jpg" alt="User profile picture">
+                    </div>
+                    <button type="button" class="reset-avatar">
+                        <img src="img/reset-close.svg" alt="">
+                    </button>
                 </div>
             </div>
-            <div class="user-course__item">
-                <div class="course-info">
-                    <div class="course-info__header">
-                        <div class="course-name">
-                            Актерское мастерство от А до Я
-                        </div>
-                        <div class="course-author">
-                            <div class="author-photo">
-                                <img src="img/author.jpg" alt="">
-                            </div>
-                            <div class="author-name">
-                                Юлия Егорова
-                            </div>
-                            <div class="author-deal">
-                                Журналист GQ
-                            </div>
-                        </div>
-                    </div>
-                    <div class="course-info__footer">
-                        <div class="course-info__item">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="10" cy="10" r="8" stroke="#E3E5E6" stroke-width="4"/>
-                            </svg>
-                            <span class="count-progress">45%</span> <span class="desc">Прогресс курса</span>
-                        </div>
-                        <div class="course-info__item">
-                            <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H14V12H0V0ZM2 2H12V10H2V2Z" fill="#78909C"/>
-                                <path d="M16 3.66667L20 1V9L16 6.33333V3.66667Z" fill="#78909C"/>
-                            </svg>
-                            <span class="count-classes">15</span> <span class="desc">занятий</span>
-                        </div>
-                        <div class="course-info__item">
-                            <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 0C14.1217 0 16.1566 0.842855 17.6569 2.34315C19.1571 3.84344 20 5.87827 20 8C20 10.1217 19.1571 12.1566 17.6569 13.6569C16.1566 15.1571 14.1217 16 12 16C9.87827 16 7.84344 15.1571 6.34315 13.6569C4.84285 12.1566 4 10.1217 4 8C4 5.87827 4.84285 3.84344 6.34315 2.34315C7.84344 0.842855 9.87827 0 12 0ZM12 2C10.4087 2 8.88258 2.63214 7.75736 3.75736C6.63214 4.88258 6 6.4087 6 8C6 9.5913 6.63214 11.1174 7.75736 12.2426C8.88258 13.3679 10.4087 14 12 14C13.5913 14 15.1174 13.3679 16.2426 12.2426C17.3679 11.1174 18 9.5913 18 8C18 6.4087 17.3679 4.88258 16.2426 3.75736C15.1174 2.63214 13.5913 2 12 2ZM11 4H12.5V7.78L14.83 10.11L13.77 11.17L11 8.4V4ZM0 14V12H3.83C4.14 12.71 4.54 13.38 5 14H0ZM1 9V7H3.05L3 8L3.05 9H1ZM2 4V2H5C4.54 2.62 4.14 3.29 3.83 4H2Z" fill="#78909C"/>
-                            </svg>
-                            <span class="counte-time">43 ч. 21 <span class="desc">мин</span>
-                        </div>
-                        <div class="course-info__item">
-                            <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9 -0.000117302L14 4.99988V15.9999H4.29153e-06L0 -0.00012207L9 -0.000117302ZM8 5.99988H12.5L8 1.49988V5.99988ZM12 13.9999V7.99988H6V1.99988H2V13.9999H12Z" fill="#78909C"/>
-                            </svg>
-                            <span class="count-doc">12</span> <span class="desc">доп. материалов</span>
-                        </div>
+            <div class="form-settings-divider"></div>
+            <div class="form-row form-row-password" id="block-password">
+                <div class="input-box">
+                    <label class="control-label">Пароль</label>
+                    <div class="hs-password">
+                        <input id="password-field" type="password" class="my-form-control" name="password" value="secret">
+                        <span toggle="#password-field" class="field-icon toggle-password"></span>
                     </div>
                 </div>
-                <div class="course-video">
-                    <a href="#" class="course-video-box">
-                        <img src="img/keys-img1.jpg" alt="">
-                        <div class="keys-block__info">
-                            <span class="play-icon">
-                                <svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <mask id="path-1-inside-1" fill="white">
-                                <path d="M0.862793 0.941162L9.96931 7.96077L0.862793 14.9804V0.941162Z"/>
-                            </mask>
-                            <path d="M0.862793 0.941162L8.79939 -9.35497C4.87501 -12.38 -0.427733 -12.9111 -4.87411 -10.7245C-9.32049 -8.53788 -12.1372 -4.0138 -12.1372 0.941162H0.862793ZM9.96931 7.96077L17.9059 18.2569C21.0989 15.7956 22.9693 11.9923 22.9693 7.96077C22.9693 3.92927 21.0989 0.125899 17.9059 -2.33536L9.96931 7.96077ZM0.862793 14.9804H-12.1372C-12.1372 19.9353 -9.32049 24.4594 -4.87411 26.646C-0.427733 28.8327 4.87501 28.3016 8.79939 25.2765L0.862793 14.9804ZM-7.07381 11.2373L2.03271 18.2569L17.9059 -2.33536L8.79939 -9.35497L-7.07381 11.2373ZM2.03271 -2.33536L-7.07381 4.68424L8.79939 25.2765L17.9059 18.2569L2.03271 -2.33536ZM13.8628 14.9804V0.941162H-12.1372V14.9804H13.8628Z" fill="white" mask="url(#path-1-inside-1)"/>
-                        </svg>
-                            </span>
-                            <div class="keys-block__text">
-                                <div class="text-help">
-                                    Продолжть просмотр
-                                </div>
-                                <div class="classes-name">
-                                    Искусство детской и семейной фотографии
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cover"></div>
-                    </a>
+                <div class="input-box">
+                    <label class="control-label">Новый пароль</label>
+                    <div class="hs-password">
+                        <input type="password" id="password-field2" class="my-form-control" name="password" value="secret">
+                        <span toggle="#password-field2" class="field-icon toggle-password"></span>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <label class="control-label">Новый пароль повторно</label>
+                    <div class="hs-password">
+                        <input id="password-field3" type="password" class="my-form-control" name="password" value="secret">
+                        <span toggle="#password-field3" class="field-icon toggle-password"></span>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="caption">
-            Доступные курсы
-        </div>
-        <div class="course-pay">
-            <div class="course-card">
-                <div class="course-card-wrap">
-                    <div class="course-img">
-                        <img src="img/course1.jpg" alt="">
-                    </div>
-                    <div class="author-name">Елена Шумилова</div>
-                    <div class="course-name">
-                        Искусство детской
-                        и семейной фотографии
-                    </div>
-                    <div class="course-info__item">
-                        <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H14V12H0V0ZM2 2H12V10H2V2Z" fill="#78909C"/>
-                            <path d="M16 3.66667L20 1V9L16 6.33333V3.66667Z" fill="#78909C"/>
-                        </svg>
-                        <span class="count-classes">15</span> занятий
-                    </div>
-                    <div class="price-box">
-                    <span>
-                        Курс начнется  сразу после оплаты
-                    </span>
-                        <div class="price">
-                            2 500 ₽
-                        </div>
-                    </div>
+            <div class="not-password" id="block-not-password">
+                <div class="label">Пароль</div>
+                <div class="password-message">
+                    <span>Установите уникальный пароль для защиты вашей учетной записи.</span>
+                    <a href="#" id="change-password">Изменить пароль</a>
                 </div>
-                <a href="#" data-toggle="modal"
-                   data-target="#pay-select" class="button-primary button-modal">
-                    начать
-                </a>
             </div>
-            <div class="course-card">
-                <div class="course-card-wrap">
-                    <div class="stock-info">15%</div>
-                    <div class="course-img">
-                        <img src="img/course2.jpg" alt="">
-                    </div>
-                    <div class="author-name">Елена Шумилова</div>
-                    <div class="course-name">
-                        Искусство детской
-                        и семейной фотографии
-                    </div>
-                    <div class="course-info__item">
-                        <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H14V12H0V0ZM2 2H12V10H2V2Z" fill="#78909C"/>
-                            <path d="M16 3.66667L20 1V9L16 6.33333V3.66667Z" fill="#78909C"/>
-                        </svg>
-                        <span class="count-classes">15</span> занятий
-                    </div>
-                    <div class="price-box">
-                    <span>
-                        Курс начнется  сразу после оплаты
-                    </span>
-                        <div class="price">
-                            2 500 ₽
-                        </div>
-                    </div>
-                </div>
-                <a href="#" data-toggle="modal"
-                   data-target="#pay-select" class="button-primary">
-                    начать
-                </a>
-            </div>
-            <div class="course-card">
-                <div class="course-card-wrap">
-                    <div class="course-img">
-                        <img src="img/course3.jpg" alt="">
-                    </div>
-                    <div class="author-name">Елена Шумилова</div>
-                    <div class="course-name">
-                        Искусство детской
-                        и семейной фотографии
-                    </div>
-                    <div class="course-info__item">
-                        <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H14V12H0V0ZM2 2H12V10H2V2Z" fill="#78909C"/>
-                            <path d="M16 3.66667L20 1V9L16 6.33333V3.66667Z" fill="#78909C"/>
-                        </svg>
-                        <span class="count-classes">15</span> занятий
-                    </div>
-                    <div class="price-box">
-                    <span>
-                        Курс начнется  сразу после оплаты
-                    </span>
-                        <div class="price">
-                            2 500 ₽
-                        </div>
-                    </div>
-                </div>
-                <a href="#" data-toggle="modal"
-                   data-target="#pay-select" class="button-primary">
-                    начать
-                </a>
-            </div>
-        </div>
+
+<!--            чтобы сделать кнопку активной - убрать класс disabled-->
+
+            <a href="#" class="button-primary disabled">сохранить изменения</a>
+        </form>
     </div>
 </section>
 

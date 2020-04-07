@@ -74,6 +74,27 @@ $( document ).ready(function() {
             }
         ]
     });
+    $('.vid-list-container.mobile ul.vid-list').slick({
+        loop: true,
+        infinite: false,
+        arrows: false,
+        centerMode: false,
+        slidesToShow: 4,
+        responsive: [
+            {
+                breakpoint: 560,
+                settings: {
+                    slidesToShow: 3.2
+                }
+            },
+            {
+                breakpoint: 440,
+                settings: {
+                    slidesToShow: 2.2
+                }
+            }
+        ]
+    });
 
 
     $(".mob-not-prev").click(function () {
@@ -93,8 +114,12 @@ $( document ).ready(function() {
     //modal trigger
     $("#button-card-pay").click(function () {
         $('#pay-select').modal('hide');
-        $('#pay-card').modal('show');
     });
+
+    $('#pay-select').on('hidden.bs.modal', function () {
+        // Load up a new modal...
+        $('#pay-card').modal('show')
+    })
 
 
 
@@ -256,20 +281,53 @@ $( document ).ready(function() {
 
     // аватар из букв
 
-    var avatarElement = $('.avatar-initials'),
+    var avatarElement = $('.avatar-initials');
+    console.log(avatarElement)
+    if (avatarElement.length) {
+        var name = avatarElement.data('name');
+        var initials = name.split(' ')[0].charAt(0).toUpperCase() + name.split(" ")[1].charAt(0).toUpperCase();
 
-        name = avatarElement.data('name'),
-        initials = name.split(' ')[0].charAt(0).toUpperCase() + name.split(" ")[1].charAt(0).toUpperCase();
+        avatarElement.css({
+            'background-color': '#ffffff',
+        })
+            .html(initials);
+    }
 
-    avatarElement.css({
-        'background-color': '#ffffff',
+    // загрузка аватара
+    $("#image-upload").change(function(data){
+
+        var imageFile = data.target.files[0];
+        var reader = new FileReader();
+        reader.readAsDataURL(imageFile);
+
+        reader.onload = function(evt){
+            $('#image-preview').attr('src', evt.target.result);
+            $('#image-preview').hide();
+            $('#image-preview').fadeIn(500);
+        }
+
+    });
+
+    //показать скрыть пароль
+    $(".toggle-password").click(function() {
+
+        $(this).toggleClass("show");
+        var input = $($(this).attr("toggle"));
+        if (input.attr("type") == "password") {
+            input.attr("type", "text");
+        } else {
+            input.attr("type", "password");
+        }
+    });
+
+    // сменить пароль
+    $('#change-password').click(function () {
+        $('#block-password').fadeIn(500).css('display', 'flex')
+        $('#block-not-password').css('display', 'none')
     })
-        .html(initials);
-
-
 });
 
-//cradit card mask
+//credit card mask
 if (window.location.href.indexOf("personal-page") > -1) {
 
     let ccNumberInput = document.querySelector('.cc-number-input'),
